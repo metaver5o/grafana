@@ -1,7 +1,7 @@
 #!/bin/bash
 
 centos_packer_path="./packer-template/CentOS-6.5-x86_64";
-ubuntu_packer_path="./packer-template/Ubuntu-12.04-x86_64";
+ubuntu_packer_path="./packer-template/Ubuntu-18.04-x86_64";
 
 function create_vagrant_box() {
   case $1 in

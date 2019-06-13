@@ -3,7 +3,7 @@
   user: name=grafana password=grafana
 
 - name: download grafana from official site.
-  get_url: url=http://grafanarel.s3.amazonaws.com/grafana-{{ grafana.vars }}.tar.gz
+  get_url: url=https://dl.grafana.com/oss/release/grafana-{{ grafana.vars }}.linux-amd64.tar.gz 
            dest=/tmp/grafana-{{ grafana.vars }}.tar.gz
 
 - name: mkdir of grafana
