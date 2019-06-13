@@ -1,9 +1,9 @@
 provider "grafana" {
-  url  = "http://0.0.0.0:3000"
+  url  = "http://192.168.33.56:3000"
   auth = "eyJrIjoiaTMzZ1dIR3ViR28xWTFHM2lXNm9IZ0xnMFBGbkRoclUiLCJuIjoiYWRtaW4iLCJpZCI6MX0="
 }
 provider "influxdb" {
-  url      = "http://0.0.0.0:8086/"
+  url      = "http://192.168.33.56:8086/"
   username = "admin"
 }
 resource "influxdb_database" "metrics" {
@@ -11,14 +11,14 @@ resource "influxdb_database" "metrics" {
 }
 
 resource "influxdb_user" "admin" {
-  name     = "admin"
-  password = "admin"
+  name     = "root"
+  password = "root"
 }
 
 resource "grafana_data_source" "test" {
   type          = "influxdb"
   name          = "test"
-  url           = "http://0.0.0.0:8086"
+  url           = "http://192.168.33.56:8086"
   username      = "admin"
   password      = "admin"
   database_name = "test"

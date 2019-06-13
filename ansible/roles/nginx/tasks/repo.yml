@@ -14,7 +14,7 @@
   when: ansible_distribution in ('Debian', 'Ubuntu')
 
 - name: setup apt repository for nginx
-  apt_repository: repo='{{ item }} http://nginx.org/packages/ubuntu/ precise nginx'
+  apt_repository: repo='{{ item }} http://nginx.org/packages/ubuntu/ bionic nginx'
                   state=present
   with_items:
     - deb
